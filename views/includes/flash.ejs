@@ -1,0 +1,29 @@
+<% if(success && success.length){ %>   
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= success %> <%# ye success valrible konsa varible to jise humne app.js ke andar middleware ke response ke locals ke andar define kiya hai. %>
+        <button
+         type="button" 
+         class="btn-close"
+         data-bs-dismiss="alert"
+         aria-label="Close"
+         ></button>
+    </div>
+<% } %>
+
+<%# success.length check karta hai ki success message me kuch text hai ya nahi.
+Agar message empty hoga, to alert render nahi hoga.  to alert tabhi ayega jb hum nyi listing create krenge aur yahi hona chaiye , aisa nhi pahle se show krte hi rhe alert.%>
+
+       
+
+<%# flash for error message  %>
+<% if(error && error.length){ %>   
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= error %> <%# ye error valrible konsa varible to jise humne app.js ke andar middleware ke response ke locals ke andar define kiya hai. %>
+        <button
+         type="button" 
+         class="btn-close"
+         data-bs-dismiss="alert"
+         aria-label="Close"
+         ></button>
+    </div>
+<% } %>
