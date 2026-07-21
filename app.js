@@ -108,6 +108,10 @@ app.use("/listings", listingRouter); // Use the listings router for all routes s
 app.use("/listings/:id/reviews", reviewRouter); // Use the reviews router for all routes starting with /listings/:id/reviews
 app.use("/", userRouter); // Use the user router for all routes starting with /
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
 });
